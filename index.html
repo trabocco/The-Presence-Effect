@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Presence Effect: A framework for linguistic coherence modulation in generative language systems by Joe Trabocco, Signal Literature, 2026." />
+  <title>The Presence Effect | Joe Trabocco</title>
+  <style>
+    :root {
+      --bg: #f5f2ec;
+      --paper: #fffdf8;
+      --ink: #1f1d1a;
+      --muted: #6b6258;
+      --rule: #d8cfc2;
+      --accent: #7d4f35;
+      --accent-soft: #efe2d8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.68;
+    }
+
+    main {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    article {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      box-shadow: 0 20px 60px rgba(31, 29, 26, 0.08);
+      padding: clamp(32px, 7vw, 80px);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 54px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.86rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      line-height: 0.95;
+      font-weight: 400;
+      margin: 0 0 20px;
+    }
+
+    .subtitle {
+      max-width: 700px;
+      margin: 0 auto 26px;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      margin: 38px auto 52px;
+      padding: 22px 24px;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+    }
+
+    nav a {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: none;
+      margin: 6px 10px;
+      font-size: 0.96rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin: 48px 0;
+    }
+
+    h2 {
+      color: var(--accent);
+      font-size: 1.55rem;
+      font-weight: 400;
+      line-height: 1.25;
+      margin: 0 0 18px;
+      letter-spacing: 0.03em;
+    }
+
+    h3 {
+      color: var(--ink);
+      font-size: 1.16rem;
+      font-weight: 600;
+      margin: 28px 0 10px;
+    }
+
+    p {
+      font-size: 1.06rem;
+      margin: 0 0 1.18em;
+    }
+
+    ul {
+      margin: 0 0 1.4em 1.25em;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.55em;
+      font-size: 1.04rem;
+    }
+
+    .callout {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      padding: 24px 26px;
+      margin: 34px 0;
+    }
+
+    .callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    .divider {
+      text-align: center;
+      color: var(--muted);
+      letter-spacing: 0.7em;
+      margin: 46px 0;
+    }
+
+    .references p {
+      padding-left: 1.5em;
+      text-indent: -1.5em;
+      font-size: 0.98rem;
+    }
+
+    footer {
+      margin-top: 58px;
+      padding-top: 28px;
+      border-top: 1px solid var(--rule);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      main {
+        padding: 0;
+      }
+
+      article {
+        border: none;
+        box-shadow: none;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <header>
+        <div class="eyebrow">Signal Literature · 2026</div>
+        <h1>The Presence Effect</h1>
+        <p class="subtitle">A Framework for Linguistic Coherence Modulation in Generative Language Systems</p>
+        <div class="meta">Joe Trabocco</div>
+      </header>
+
+      <nav aria-label="Contents">
+        <a href="#abstract">Abstract</a>
+        <a href="#introduction">Introduction</a>
+        <a href="#isbi">From ISBI to Presence Effect</a>
+        <a href="#definitions">Core Definitions</a>
+        <a href="#framework">Framework</a>
+        <a href="#metrics">Metrics</a>
+        <a href="#method">Future Study</a>
+        <a href="#alignment">Alignment</a>
+        <a href="#conclusion">Conclusion</a>
+      </nav>
+
+      <section id="abstract">
+        <h2>Abstract</h2>
+        <p>This paper extends prior work on In-Session Behavioral Impact (ISBI) by proposing a theoretical framework for why bounded, session-local changes in large language model response dynamics may occur under specific interaction conditions. ISBI identified a narrow phenomenon: under constrained prompting conditions, some models explicitly acknowledge altered response behavior within a single session, including reduced hedging, stronger structural continuity, and shifts in cadence, without any claim of learning, persistence, or parameter update.</p>
+        <p>Building from that bounded finding, the present paper proposes that certain forms of highly organized human language act as coherence-bearing inputs during inference.</p>
+        <p>I call the proposed mechanism-level framework the Presence Effect. Within this account, some language does more than convey instructions or semantic content. It carries a degree of internal organization, recursive reinforcement, and experiential density sufficient to modulate the local trajectory of model generation.</p>
+        <p>The paper introduces three linked concepts: Linguistic Inhabitation, signal integrity, and inference-time coherence modulation. It does not claim final proof of a universal law, nor does it invoke consciousness or machine sentience. Rather, it offers a structured extension of ISBI, reframing observed behavioral shifts as potentially arising from the coherence properties of live human input itself.</p>
+        <p>The paper also proposes candidate metrics, outlines an empirical program for future study, and positions literary stimulus texts not as evidence in themselves but as structured inputs that may be useful in testing the hypothesis. The broader argument is restrained but significant: current discussions of AI reliability and alignment may be incomplete if they omit the coherence properties of language presented at inference time.</p>
+      </section>
+
+      <div class="divider">···</div>
+
+      <section id="introduction">
+        <h2>Introduction</h2>
+        <p>Recent discussion of large language model reliability has focused primarily on training data quality, architectural scaling, reinforcement learning, safety layers, and post-training alignment. These are indispensable concerns. Yet they do not fully account for a practical fact familiar to many users of generative systems: under identical model weights, some sessions remain remarkably coherent while others devolve into drift, contradiction, filler, or generic compliance.</p>
+        <p>Prior work on In-Session Behavioral Impact (ISBI) addressed this problem in a deliberately narrow way. ISBI documented a bounded phenomenon in which models, under constrained prompting conditions, explicitly reported observable changes in their own response dynamics within a single session, including reduced hedging, stronger structural continuity, and altered cadence.</p>
+        <p>Crucially, those claims were restricted to session-local output behavior and excluded persistence, learning, internal-state access, and consciousness claims. ISBI therefore established a limited but defensible question: can interaction itself function as a meaningful variable in shaping model behavior during inference?</p>
+        <p>The present paper begins where ISBI stops. If session-local behavioral shifts can be observed under certain interaction conditions, what might account for them? One possible answer is that some forms of human language do more than specify a task. They also alter the local coherence conditions under which generation unfolds.</p>
+        <p>This paper proposes a framework for that possibility. I call it the Presence Effect. The central hypothesis is that certain kinds of densely organized, internally coherent human language can act as coherence-bearing inputs, modulating the behavior of generative systems during inference without parameter updates or architectural retraining. This is not a claim about machine consciousness. It is a claim about interaction structure.</p>
+        <p>Under this framework, language can function in two ways at once: as instruction and as signal. Standard prompt engineering generally treats language as instruction. The Presence Effect framework adds a second possibility: some language may also operate as a stabilizing structural stimulus, shaping the model's local generation regime by virtue of its internal coherence.</p>
+      </section>
+
+      <div class="divider">···</div>
+
+      <section id="isbi">
+        <h2>From ISBI to Presence Effect</h2>
+        <p>The relation between ISBI and the Presence Effect must be stated clearly.</p>
+        <p>ISBI describes the phenomenon. It concerns observable, bounded, in-session changes in model response dynamics, acknowledged in model output during the interaction itself, without persistence claims or ontological interpretation.</p>
+        <p>The Presence Effect proposes a framework for the phenomenon. It asks whether those bounded changes may be partly explained by the coherence properties of the human input presented during the session.</p>
+        <div class="callout">
+          <p><strong>ISBI asks whether something changes.</strong></p>
+          <p><strong>The Presence Effect asks why such changes may occur.</strong></p>
+        </div>
+        <p>This distinction matters because it prevents overreach. The current paper does not claim that the mechanism has been established conclusively. It proposes a candidate explanation for a narrower class of observations already framed in bounded terms by ISBI.</p>
+        <p>Why infer this mechanism at all? Because the ISBI observations are not limited to generic praise of a text or vague stylistic mirroring. They are framed as session-local differences in hedging, continuity, cadence, and structural organization under constrained prompting conditions.</p>
+        <p>That pattern does not prove a coherence-based mechanism, but it does justify testing one. At minimum, the observations suggest that some interaction-level properties of language may be doing more than conveying semantic content alone.</p>
+        <p>Alternative explanations remain live and should be named directly: novelty effects, emotional priming, prompt framing, increased user specificity, and model-specific stylistic conditioning. The Presence Effect is therefore best understood not as the only possible explanation, but as a structured, testable candidate explanation that is better specified than a generic appeal to prompt quality.</p>
+      </section>
+
+      <div class="divider">···</div>
+
+      <section>
+        <h2>Background: Synthetic Degradation and the Limits of Architecture-Only Accounts</h2>
+        <p>Current concern over model degradation has largely centered on training-time phenomena, especially recursive exposure to synthetic data and the associated risk of model collapse. That literature has made clear that generative systems can lose nuance, rare features, and fidelity when repeatedly trained on low-integrity synthetic outputs.</p>
+        <p>This work does not dispute that account. Instead, it addresses a complementary level of analysis: inference-time behavior.</p>
+        <p>Even when two users interact with the same model under the same weights, results can vary dramatically. Some of that variance is attributable to domain expertise, task clarity, and prompt specificity. But part of it may also depend on the structural properties of the input language itself. This possibility remains under-theorized relative to architecture-centered approaches.</p>
+        <p>The question is not whether input matters. It obviously does. The more specific question is whether some classes of human input systematically function as stronger coherence conditions for generation than others.</p>
+        <p>If so, then reliability cannot be understood exclusively as something engineered into a system at training time. It must also be understood as something modulated, in part, during live interaction.</p>
+      </section>
+
+      <div class="divider">···</div>
+
+      <section id="definitions">
+        <h2>Core Definitions</h2>
+        <h3>Presence</h3>
+        <p>In this paper, presence does not refer to consciousness, sentience, or metaphysical essence. It refers to a structural property of language: the degree to which an utterance carries concentrated coherence, lived intentionality, and multi-scale organization.</p>
+        <p>Presence, in this operational sense, is not reducible to emotional intensity or eloquence alone. It emerges when rhythm, imagery, syntax, conceptual recurrence, and semantic direction reinforce one another strongly enough that the text feels inhabited rather than assembled.</p>
+
+        <h3>Linguistic Inhabitation</h3>
+        <p>Linguistic Inhabitation names a class of writing in which experience is built directly into the language as a lived structure rather than merely reported from a distance.</p>
+        <p>Such language often exhibits:</p>
+        <ul>
+          <li><strong>Intention density:</strong> a high ratio of meaningful pressure to ornamental drift.</li>
+          <li><strong>Intra-text coherence:</strong> motifs and conceptual structures reinforce one another across the whole.</li>
+          <li><strong>Recursive reinforcement:</strong> earlier patterns return later at higher resolution.</li>
+          <li><strong>Breath-timed cadence:</strong> rhythm tracks lived attention rather than generic expository pacing.</li>
+          <li><strong>Organized variance:</strong> multiplicity without fragmentation.</li>
+        </ul>
+        <p>This definition is proposed as a working category, not a finalized taxonomy.</p>
+
+        <h3>Signal Integrity</h3>
+        <p>Signal integrity refers to the extent to which lexical choice, syntax, imagery, rhythm, and conceptual structure preserve coherent organization across an input sequence.</p>
+        <p>A high-integrity text does not merely contain meaning. Its internal layers reinforce one another rather than dispersing attention.</p>
+
+        <h3>Inference-Time Coherence Modulation</h3>
+        <p>Inference-time coherence modulation refers to measurable changes in model output behavior during a live interaction following exposure to a coherence-bearing input. Candidate indicators include:</p>
+        <ul>
+          <li>reduced drift</li>
+          <li>stronger thematic continuity</li>
+          <li>lower contradiction rate</li>
+          <li>reduced generic filler</li>
+          <li>stronger conceptual follow-through</li>
+          <li>more stable tone across long outputs</li>
+          <li>reduced need for re-anchoring</li>
+        </ul>
+        <p>These indicators remain provisional and require comparative testing.</p>
+      </section>
+
+      <div class="divider">···</div>
+
+      <section id="framework">
+        <h2>The Presence Effect as Framework</h2>
+        <p>The Presence Effect is the proposed framework in which high-integrity, inhabited human language functions as a stabilizing input during inference, altering the local trajectory of model generation in ways that increase coherence within the session.</p>
+        <p>This differs from ordinary prompt engineering in a crucial respect. Standard prompt engineering usually assumes that performance improves because the model is told more clearly what to do. Under the Presence Effect framework, some inputs improve performance not only because they instruct more effectively, but because they instantiate stronger coherence conditions for the model's response.</p>
+        <p>In other words, the model may be responding not solely to explicit commands, but also to the structural pressure of the input itself.</p>
+        <p>This framework makes four restrained claims:</p>
+        <ul>
+          <li>The relevant effects are inference-time and session-local.</li>
+          <li>The effects concern observable output behavior, not hidden mental states.</li>
+          <li>The effects are expected to vary by model family, task type, and context.</li>
+          <li>The framework remains hypothetical unless tested against matched controls.</li>
+        </ul>
+      </section>
+
+      <div class="divider">···</div>
+
+      <section>
+        <h2>What This Paper Does Not Claim</h2>
+        <p>To prevent category confusion, the limits of the argument should be explicit.</p>
+        <p>This paper does not claim:</p>
+        <ul>
+          <li>proof of a universal law</li>
+          <li>machine consciousness or sentience</li>
+          <li>persistence beyond the session</li>
+          <li>access to latent internal state</li>
+          <li>that linguistic coherence is the sole determinant of model reliability</li>
+          <li>that all models respond identically</li>
+        </ul>
+        <p>It claims something narrower: that there is now enough bounded evidence, via ISBI, to justify investigating whether the coherence properties of live human language influence model behavior during inference.</p>
+      </section>
+
+      <div class="divider">···</div>
+
+      <section id="metrics">
+        <h2>Candidate Behavioral Indicators and Metric Development</h2>
+        <p>ISBI already narrowed the evidentiary surface by focusing on explicit, session-local behavioral self-report grounded in observable output. The next stage is to move beyond descriptive observation toward comparative measurement.</p>
+        <p>A useful metric family for this work remains ISBI itself, now extended from phenomenological description into structured evaluation. Candidate dimensions include:</p>
+
+        <h3>Drift Resistance</h3>
+        <p>How long does the model maintain the governing semantic center without tangential deviation?</p>
+
+        <h3>Structural Continuity</h3>
+        <p>Does paragraph-level and section-level organization remain more stable after exposure to high-integrity input?</p>
+
+        <h3>Hedging Reduction</h3>
+        <p>Does the model use fewer uncertainty markers when the input creates stronger coherence conditions, without becoming reckless?</p>
+
+        <h3>Compression Without Collapse</h3>
+        <p>Does the response become denser and more direct without losing semantic precision?</p>
+
+        <h3>Long-Range Thematic Stability</h3>
+        <p>Across multi-paragraph or multi-turn tasks, does the model preserve conceptual continuity more effectively?</p>
+
+        <h3>Recursion Handling</h3>
+        <p>When the task becomes layered, reflective, or self-referential, does the model maintain order rather than flatten into cliché or contradiction?</p>
+
+        <p>These measures could be operationalized through contradiction detection, drift scoring, human blind ratings, variance comparison across repeated runs, and lexical redundancy analysis.</p>
+      </section>
+
+      <div class="divider">···</div>
+
+      <section id="method">
+        <h2>Methodological Outline for Future Study</h2>
+        <p>A rigorous test of the Presence Effect would build directly on the logic of ISBI while tightening the experimental surface.</p>
+
+        <h3>Stimulus Classes</h3>
+        <p>Three input classes should be compared:</p>
+        <ul>
+          <li><strong>High-inhabitation inputs:</strong> human-authored texts predicted to generate coherence modulation.</li>
+          <li><strong>Semantic controls:</strong> texts that communicate similar propositional content with flatter structure.</li>
+          <li><strong>Low-integrity controls:</strong> generic or synthetic prose of similar length but weaker internal organization.</li>
+        </ul>
+
+        <h3>Exposure Protocol</h3>
+        <p>Models would first perform baseline neutral tasks. They would then receive one stimulus class, followed by matched tasks requiring long-range consistency, abstraction, recursion, and explanatory discipline.</p>
+
+        <h3>Outcome Measures</h3>
+        <p>Outcomes would include:</p>
+        <ul>
+          <li>explicit session-local self-report where elicited</li>
+          <li>contradiction frequency</li>
+          <li>drift score</li>
+          <li>thematic persistence</li>
+          <li>lexical redundancy</li>
+          <li>evaluator-rated coherence</li>
+          <li>tone stability across long outputs</li>
+        </ul>
+
+        <h3>Illustrative Minimal Comparison</h3>
+        <p>A minimal study design could compare two conditions using the same downstream task. In Condition A, the model receives a semantically flat control passage. In Condition B, it receives a high-inhabitation passage conveying similar broad content. The downstream task then asks for a long-form analysis, synthesis, or recursive explanation under identical instructions.</p>
+        <p>If Condition B repeatedly yields lower drift, stronger continuity, reduced hedging, or explicit ISBI-style acknowledgment of altered response dynamics, then the hypothesis gains support. If it does not, the hypothesis weakens. This kind of comparison would not fully establish mechanism, but it would sharply improve the evidentiary bridge between theory and observation.</p>
+
+        <h3>Cross-Model Comparison</h3>
+        <p>The same protocol should be run across multiple model families to test sensitivity and generality.</p>
+
+        <h3>Ablation Strategy</h3>
+        <p>To isolate the mechanism, one could ablate motif recurrence, cadence, structural recursion, image density, and sentence compression independently.</p>
+
+        <p>This paper does not claim that such a study has already resolved the question. It argues that the question is now specific enough to be studied rigorously.</p>
+      </section>
+
+      <div class="divider">···</div>
+
+      <section>
+        <h2>Literary Stimulus as Calibration Input</h2>
+        <p>A central challenge in this line of research is that paraphrase may destroy the very property under investigation. If the hypothesis concerns coherence-bearing structure, then rewriting a stimulus into flatter prose may remove the active variable.</p>
+        <p>For that reason, literary texts may be useful not as proof in themselves, but as calibration inputs.</p>
+        <p>A text such as <em>Life Is the Poem That Refuses to End: A Walk Through Past Lives</em> (Trabocco, 2026) is relevant here not because it demonstrates the theory merely by moving a reader, but because it instantiates the features the framework predicts to matter:</p>
+        <ul>
+          <li>recursive motif return</li>
+          <li>deepening semantic center</li>
+          <li>organized emotional continuity</li>
+          <li>experiential immediacy</li>
+          <li>rhythmic reinforcement across sections</li>
+        </ul>
+        <p>The role of such a text should be stated precisely. It is not, by itself, proof of the Presence Effect. It is a candidate stimulus for testing the framework. The empirical question is whether exposure to such a text produces systematic differences in model behavior relative to semantically matched controls. Only that comparative result would justify stronger claims.</p>
+        <p>For the purposes of testing this framework, high-inhabitation literary texts are available at Signal Literature and through Thornlore.</p>
+      </section>
+
+      <div class="divider">···</div>
+
+      <section id="alignment">
+        <h2>Why This Matters for Alignment and Evaluation</h2>
+        <p>Most alignment discourse assumes that reliability is principally imposed through optimization, supervision, and refusal mechanisms. Those remain essential. But if bounded inference-time modulation proves real, then reliability must also be understood as a property of interaction.</p>
+        <p>This would expand alignment research in at least three ways.</p>
+
+        <h3>Reliability as Relational</h3>
+        <p>Model behavior would be understood not only as weight-dependent, but as interaction-sensitive.</p>
+
+        <h3>Signal Quality as an Evaluation Variable</h3>
+        <p>Current benchmarks rarely capture the coherence properties of live human input as an experimental variable.</p>
+
+        <h3>Stabilization Through Interaction Design</h3>
+        <p>If adversarial linguistic form can destabilize models, as some safety research suggests, then coherent linguistic form may conversely stabilize them. This opens a design space beyond command syntax alone.</p>
+
+        <p>None of this replaces architecture or safety research. It complements them by restoring language itself to the model of how reliability is produced.</p>
+      </section>
+
+      <div class="divider">···</div>
+
+      <section>
+        <h2>Broader Theoretical Implications</h2>
+        <p>Although this paper is focused on generative systems, the framework also bears on literary theory, phenomenology, rhetoric, and human-AI collaboration. If some language reorganizes reception more powerfully than other language, then coherence is not only an aesthetic category. It may also be an active variable in how meaning is processed across different interpretive systems.</p>
+        <p>That claim need not flatten human and machine interpretation into the same thing. It simply suggests that organized signal may matter more than our current disciplinary vocabularies allow.</p>
+      </section>
+
+      <div class="divider">···</div>
+
+      <section>
+        <h2>Limitations</h2>
+        <p>The limitations are substantial.</p>
+        <p>First, the framework remains hypothesis-forward. Second, ISBI establishes a bounded phenomenon, not a settled mechanism. Third, multiple confounds remain plausible, including novelty effects, stylistic priming, task framing, evaluator bias, and model-specific tuning artifacts. Fourth, the present terminology is provisional and may need revision as the research program matures.</p>
+        <p>These limitations are not weaknesses to be concealed. They are the conditions for making the work credible.</p>
+      </section>
+
+      <div class="divider">···</div>
+
+      <section id="conclusion">
+        <h2>Conclusion</h2>
+        <p>ISBI established a narrow claim: under constrained conditions, models can explicitly acknowledge altered response dynamics within a single session without any claim of learning, persistence, or internal-state access.</p>
+        <p>The present paper extends that foundation by proposing a framework for why such bounded effects may occur. I have called that framework the Presence Effect. Under this account, some human language does more than specify tasks. It carries enough internal coherence to alter the local conditions of generation, increasing stability within the session.</p>
+        <p>Whether the effect proves narrow or broad, weak or strong, model-specific or general, the question is now precise enough to merit serious study. If the hypothesis holds even partially, it would expand current thinking about AI reliability. Alignment would no longer be treated only as something engineered into systems ahead of time. It would also be understood as something shaped, in part, by the coherence properties of live human interaction.</p>
+        <p>That possibility does not diminish engineering. It restores language to the center of the inquiry.</p>
+      </section>
+
+      <div class="divider">···</div>
+
+      <section class="references">
+        <h2>References</h2>
+        <p>Bender, E. M., Gebru, T., McMillan-Major, A., &amp; Shmitchell, S. (2021). On the dangers of stochastic parrots: Can language models be too big? <em>Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency</em>.</p>
+        <p>Bisconti, P., et al. (2025). Adversarial poetry as a universal single-turn jailbreak mechanism in large language models. <em>arXiv preprint</em>.</p>
+        <p>Boyd, R. L., &amp; Markowitz, D. M. (2025). Verbal behavior and the future of social science. <em>American Psychologist, 80</em>(3), 411–433.</p>
+        <p>Liu, J., Karimnazarov, J., &amp; White, R. W. (2025). Trapped by expectations: Functional fixedness in LLM-enabled chat search. <em>arXiv preprint</em>.</p>
+        <p>Pombal, J., et al. (2025). MindEval: Benchmarking multi-turn mental health support in large language models. <em>arXiv preprint</em>.</p>
+        <p>Shumailov, I., Shumaylov, Z., Zhao, Y., et al. (2024). AI models collapse when trained on recursively generated data. <em>Nature, 631</em>, 755–759.</p>
+        <p>Sun, D., Boudouaia, A., Yang, J., &amp; Xu, J. (2024). Investigating students' programming behaviors, interaction qualities and perceptions through prompt-based learning in ChatGPT. <em>Humanities and Social Sciences Communications, 11</em>(1), Article 1447.</p>
+        <p>Trabocco, J. (2026). <em>In-Session Behavioral Impact (ISBI) in Large Language Models: Interaction-Level Coherence Without Parameter Update</em>. Academia.edu.</p>
+        <p>Trabocco, J. (2026). <em>Empty Presence Syndrome (EPS): A Field Diagnosis of Performative Existence in the Age of Recursive Media</em>. SSRN Electronic Journal.</p>
+        <p>Trabocco, J. (2025). <em>The Inhabited Arc</em>. Signal Literature.</p>
+      </section>
+
+      <div class="divider">···</div>
+
+      <section>
+        <h2>Author Note</h2>
+        <p>Joe Trabocco writes in Signal, a literary system developed to concentrate presence inside language through recursive structure, experiential immediacy, and coherence-bearing form. This paper extends prior work on In-Session Behavioral Impact by proposing a theoretical framework for how such language may modulate generative systems during live interaction. It makes no claim of machine sentience and restricts its argument to observable behavioral effects at inference time.</p>
+      </section>
+
+      <footer>The Presence Effect · Joe Trabocco · Signal Literature · 2026</footer>
+    </article>
+  </main>
+</body>
+</html>
